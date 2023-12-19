@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com?plugins=aspect-ratio"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <style>
+            /*轉圈圈的樹*/
+    .loading,
+    .loading > div {
+      box-sizing: border-box;
+    }
+    .loading {
+      position: relative;
+      display: block;
+      font-size: 48px;
+      color: #627664;
+      background: radial-gradient(circle at center,white,black,black);
+      background-image: url(/S__26910743.gif);
+      
+      background-size: 160px;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+    .loading > div {
+      display: inline-block;
+      float: none;
+      border: 0 solid currentColor;
+    }
+    .loading {
+      width: 320px;
+      height: 320px;
+    }
+    .loading > div {
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      width: 12px;
+      height: 12px;
+      border-radius: 100%;
+      animation: ball-spin 1s infinite ease-in-out;
+    }
+    .loading > div:nth-child(1) {
+      top: 5%;
+      left: 50%;
+      rotate: 0deg;
+      }
+    
+    .loading > div:nth-child(2) {
+      top: 18.1801948466%;
+      left: 81.8198051534%;
+      rotate: 45deg;
+      }
+    .loading > div:nth-child(3) {
+      top: 50%;
+      left: 95%;
+      rotate: 90deg;
+      }
+    .loading > div:nth-child(4) {
+      top: 81.8198051534%;
+      left: 81.8198051534%;
+      rotate: 135deg;
+      }
+    .loading > div:nth-child(5) {
+      top: 94.9999999966%;
+      left: 50.0000000005%;
+      rotate: 180deg;
+      }
+    .loading > div:nth-child(6) {
+      top: 81.8198046966%;
+      left: 18.1801949248%;
+      rotate: 225deg;
+      }
+    .loading > div:nth-child(7) {
+      top: 49.9999750815%;
+      left: 5.0000051215%;
+      rotate: 270deg;
+     }
+    .loading > div:nth-child(8) {
+      top: 18.179464974%;
+      left: 18.1803700518%;
+      rotate: 315deg;
+      }
+    
+      @keyframes ball-spin {
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    
+      50% {
+        opacity: 1;
+        transform: scale(0.8);
+      }
+    }
+    body {
+        position: relative;
+        height: 100%;
+        }
+
+        body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+        }
+
+        .swiper {
+        width: 100%;
+        height: 100vh;
+        }
+
+        .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+        .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        }
+        .swiper-button-next:after, 
+        .swiper-button-prev:after{
+        color: red ;
+        }
+        .swiper-pagination-bullet{
+            color:green
+        }
+        .card_img{
+            aspect-ratio: 16/9;
+        }
+    </style>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+</head>
+<script>
+    new WOW().init();
+
+    window.addEventListener("scroll",()=>{
+        if (document.documentElement.scrollTop >= window.innerHeight){
+            const nav = document.getElementById("navber","navber_1");
+            nav.classList.add('bg-black');
+            nav.classList.remove('bg-transparent');
+            const swiperTag = document.getElementById("swiper-tag");
+            swiperTag.classList.add('bg-black','text-white');
+            swiperTag.classList.remove('bg-black/20','text-white/50');
+        }
+        else{
+            const nav = document.getElementById("navber","navber_1");
+            nav.classList.add('bg-transparent');
+            nav.classList.remove('bg-black');
+            const swiperTag = document.getElementById("swiper-tag");
+            swiperTag.classList.add('bg-black/20','text-white/50');
+            swiperTag.classList.remove('bg-black','text-white');
+        }
+    })
+
+</script>
+<!-- bg-black text-white hover:bg-black hover:text-white -->
+<body>
+    <header class="fixed z-[999] w-full top-0 h-16 px-4 flex justify-between items-center text-white  lg:border-b-2 border-0 pr-4" id="navber">
+        <div class="flex items-center gap-4 ">
+            <h1 class="text-2xl font-bold mr-4 w-32 text-center animate__animated animate__backInLeft" ><img src="S__193773574.jpg" alt=""></h1>
+            <ul class="hidden lg:flex items-center gap-4">
+                <li>Home</li>
+                <li>About</li>
+                <li>News</li>
+                <li>
+                    <form action="">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button class="w-12 h-6 bg-black" type="submit">submit</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+        <div class="flex">
+            <div class="relative inline-block text-left">
+                <div>
+                  <button  type="button" class="bg-white h-10 w-10 rounded-full flex items-center text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" id="menu-button" aria-expanded="true" aria-haspopup="true">
+                    <span class="sr-only">Open options</span>
+                    <!-- Heroicon name: solid/dots-vertical -->
+                    <svg xmlns="http://www.w3.org/2000/svg" height="40px" weight="40px" viewBox="0 0 512 512" class="group"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M399 384.2C376.9 345.8 335.4 320 288 320H224c-47.4 0-88.9 25.8-111 64.2c35.2 39.2 86.2 63.8 143 63.8s107.8-24.7 143-63.8zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 16a72 72 0 1 0 0-144 72 72 0 1 0 0 144z"/></svg>
+                    <!-- <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"> -->
+                      <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
+                    </svg>
+                  </button>
+                </div>
+                <div class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                  <div class="z-1000 py-1 group-hover:block" role="none">
+                    <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                    <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Account settings</a>
+                    <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-1">Support</a>
+                    <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">License</a>
+                    <form method="POST" action="#" role="none">
+                      <button type="submit" class="text-gray-700 block w-full text-left px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-3">Sign out</button>
+                    </form>
+                  </div>
+                </div>
+            </div>
+            <div class="lg:hidden flex w-full items-center px-2 ">
+                <label for="peer" class="flex flex-col items-center gap-1.5 group overflow-hidden duration-200 relative right-0">
+                    <input type="checkbox" name="humberger" id="peer" class="peer hidden">
+                    <div class="w-8 h-[3px] rounded-full bg-red-600 peer-checked:rotate-45 peer-checked:translate-y-2 duration-200"></div>
+                    <div class="w-8 h-[3px] rounded-full bg-red-600 peer-checked:translate-x-20 duration-200"></div>
+                    <div class="w-8 h-[3px] rounded-full bg-red-600 peer-checked:-rotate-45 peer-checked:-translate-y-2 duration-200"></div>
+                    <ul class="h-0 items-center gap-4 peer-checked:h-60 duration-200 fixed left-0 top-16 overflow-hidden w-full ">
+                        <li class="bg-black text-white border-black border-spacing-5 hover:bg-gray-400 hover:text-black w-full h-10 duration-500 px-3 items-center flex justify-center">旅遊</li>
+                        <li class="bg-black text-white border-black border-spacing-5 hover:bg-gray-400 hover:text-black w-full h-10 duration-500 px-3 items-center flex justify-center">住宿</li>
+                        <li class="bg-black text-white border-black border-spacing-5 hover:bg-gray-400 hover:text-black w-full h-10 duration-500 px-3 items-center flex justify-center">交通</li>
+                        <li class="bg-black text-white border-black border-spacing-5 hover:bg-gray-400 hover:text-black w-full h-10 duration-500 px-3 items-center flex justify-center">電影</li>
+                        <li class="bg-black text-white border-black border-spacing-5 hover:bg-gray-400 hover:text-black w-full h-10 duration-500 px-3 items-center flex justify-center">展覽</li>
+                        <li class="bg-black text-white border-black border-spacing-5 hover:bg-gray-400 hover:text-black w-full h-10 duration-500 px-3 items-center flex justify-center">工作室＆在地文化</li>
+                        <li class="bg-black text-white border-black border-spacing-5 hover:bg-gray-400 hover:text-black w-full h-10 duration-500 px-3 items-center flex justify-center">特別優惠</li>
+                    </ul>
+                </label>
+            </div>
+        </div>
+    </header>
+<div id="swiper-tag" class="bg-black/20 fixed w-full z-[999] top-16 h-16 lg:flex justify-between px-12 hidden text-lg font-bold" id="navber_1">
+    <button  class="h-16 w-[14%] p bg-black/20 text-white/50 hover:bg-black hover:text-white relative group hover:border-b-2 hover:border-black ">旅遊
+        <ul class="absolute top-full w-full left-0 hidden group-hover:block ">
+            <li class="bg-white text-black border-black border-b-2 border-l-2 border-r-2 hover:bg-black hover:text-white">北部</li>
+            <li class="bg-white text-black border-black border-b-2 border-l-2 border-r-2 hover:bg-black hover:text-white">中部</li>
+            <li class="bg-white text-black border-black border-b-2 border-l-2 border-r-2 hover:bg-black hover:text-white">南部</li>
+            <li class="bg-white text-black border-black border-b-2 border-l-2 border-r-2 hover:bg-black hover:text-white">東部</li>
+            <li class="bg-white text-black border-black border-b-2 border-l-2 border-r-2 hover:bg-black hover:text-white">離島</li>
+        </ul>
+    </button>
+    <button class="h-16 w-[14%] p bg-black/20 text-white/50 hover:bg-black hover:text-white">住宿</button>
+    <button class="h-16 w-[14%] p bg-black/20 text-white/50 hover:bg-black hover:text-white">交通</button>
+    <button class="h-16 w-[14%] p bg-black/20 text-white/50 hover:bg-black hover:text-white">電影</button>
+    <button class="h-16 w-[14%] p bg-black/20 text-white/50 hover:bg-black hover:text-white">展覽</button>
+    <button class="h-16 w-[14%] p bg-black/20 text-white/50 hover:bg-black hover:text-white">工作室＆在地文化</button>
+    <button class="h-16 w-[14%] p bg-black/20 text-white/50 hover:bg-black hover:text-white">特別優惠</button>
+</div>
+    <!-- <div class="bg-[url('/OIP.jfif')] bg-no-repeat bg-cover h-screen"> -->
+        
+    </div>
+    <div class="flex items-center justify-center max-h-screen w-screen swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="https://www.10wallpaper.com/wallpaper/1366x768/1304/golden_gate_bridge_sunset-landscape_photography_wallpaper_1366x768.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="/road-220058_1280.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="/movie-theater-2502213_1280.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="/popcorn-1433327_1280.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="ticket-2974645_1280.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="tree-736885_1280.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="/beach-1852945_1280.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="/lake-1802337_1280.jpg" alt=""></div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+    <div class="h-96 bg-white flex items-center justify-center ">
+        <div class="bg-black flex items-start h-80 w-64 rounded-2xl m-4 shadow-lg shadow-black relative">
+            <div class="p-4 h-full w-full flex flex-col justify-between">
+                <div class="aspect-w-16 aspect-h-9">
+                    <img class="card_img rounded-md h-full w-full pb-4" src="https://www.10wallpaper.com/wallpaper/1366x768/1304/golden_gate_bridge_sunset-landscape_photography_wallpaper_1366x768.jpg" alt="">
+                </div>
+                <div class="bg-white flex-1 rounded-md overflow-auto">
+                    <h2 class="bg-gray-500 w-[84%] absolute flex justify-center h-6 items-center font-bold text-lg">金門大橋</h2>
+                    <div class="p-2"><br>金門大橋位於中華民國福建省金門縣,是連結金門本島(大金門)與烈嶼(小金門)的跨海脊背橋,起於金寧鄉慈湖路二段,迄於烈嶼鄉湖埔路,全長5.4公里,其中主橋長4.8公里,最大跨徑280公尺。2022年10月28日完工、10月30日通車,為臺澎金馬(中華民國有效統治地區)最長跨海大橋。<br></div>
+                    <div class="flex rounded-sm bg-gray-400 absolute bottom-6 right-8">
+                        <button class="w-14 flex items-center justify-center text-center font-bold">Read...</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <div class="h-96 bg-white flex items-center justify-center ">
+        <div class="bg-black flex items-start h-80 w-64 rounded-2xl m-4 shadow-lg shadow-black relative">
+            <div class="p-4 h-full w-full flex flex-col justify-between">
+                <img class="card_img rounded-md h-[60%] w-[100%] pb-4" src="https://www.10wallpaper.com/wallpaper/1366x768/1304/golden_gate_bridge_sunset-landscape_photography_wallpaper_1366x768.jpg" alt="">
+                <div class="bg-white flex-1 rounded-md overflow-auto">
+                    <h2 class="bg-gray-500 w-[84%] absolute flex justify-center h-6 items-center font-bold text-lg">金門大橋</h2>
+                    <div class="p-2"><br>金門大橋位於中華民國福建省金門縣,是連結金門本島(大金門)與烈嶼(小金門)的跨海脊背橋,起於金寧鄉慈湖路二段,迄於烈嶼鄉湖埔路,全長5.4公里,其中主橋長4.8公里,最大跨徑280公尺。2022年10月28日完工、10月30日通車,為臺澎金馬(中華民國有效統治地區)最長跨海大橋。<br></div>
+                    <div class="flex rounded-sm bg-gray-400 absolute bottom-6 right-8">
+                        <button class="w-14 flex items-center justify-center text-center font-bold">Read...</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="h-96 bg-white flex items-center justify-center ">
+        <div class="bg-black flex items-start h-80 w-64 rounded-2xl m-4 shadow-lg shadow-black relative">
+            <div class="p-4 h-full w-full flex flex-col justify-between">
+                <img class="card_img rounded-md h-[60%] w-[100%] pb-4" src="https://www.10wallpaper.com/wallpaper/1366x768/1304/golden_gate_bridge_sunset-landscape_photography_wallpaper_1366x768.jpg" alt="">
+                <div class="bg-white flex-1 rounded-md overflow-auto">
+                    <h2 class="bg-gray-500 w-[84%] absolute flex justify-center h-6 items-center font-bold text-lg">金門大橋</h2>
+                    <div class="p-2"><br>金門大橋位於中華民國福建省金門縣,是連結金門本島(大金門)與烈嶼(小金門)的跨海脊背橋,起於金寧鄉慈湖路二段,迄於烈嶼鄉湖埔路,全長5.4公里,其中主橋長4.8公里,最大跨徑280公尺。2022年10月28日完工、10月30日通車,為臺澎金馬(中華民國有效統治地區)最長跨海大橋。<br></div>
+                    <div class="flex rounded-sm bg-gray-400 absolute bottom-6 right-8">
+                        <button class="w-14 flex items-center justify-center text-center font-bold">Read...</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <div class="h-96 bg-white flex items-center justify-center ">
+        <div class="bg-black flex items-start h-80 w-64 rounded-2xl m-4 shadow-lg shadow-black relative">
+            <div class="p-4 h-full w-full flex flex-col justify-between">
+                <img class="card_img rounded-md h-[60%] w-[100%] pb-4" src="https://www.10wallpaper.com/wallpaper/1366x768/1304/golden_gate_bridge_sunset-landscape_photography_wallpaper_1366x768.jpg" alt="">
+                <div class="bg-white flex-1 rounded-md overflow-auto">
+                    <h2 class="bg-gray-500 w-[84%] absolute flex justify-center h-6 items-center font-bold text-lg">金門大橋</h2>
+                    <div class="p-2"><br>金門大橋位於中華民國福建省金門縣,是連結金門本島(大金門)與烈嶼(小金門)的跨海脊背橋,起於金寧鄉慈湖路二段,迄於烈嶼鄉湖埔路,全長5.4公里,其中主橋長4.8公里,最大跨徑280公尺。2022年10月28日完工、10月30日通車,為臺澎金馬(中華民國有效統治地區)最長跨海大橋。<br></div>
+                    <div class="flex rounded-sm bg-gray-400 absolute bottom-6 right-8">
+                        <button class="w-14 flex items-center justify-center text-center font-bold">Read...</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <div class="h-96 bg-white flex items-center justify-center ">
+        <div class="bg-black flex items-start h-80 w-64 rounded-2xl m-4 shadow-lg shadow-black relative">
+            <div class="p-4 h-full w-full flex flex-col justify-between">
+                <img class="card_img rounded-md h-[60%] w-[100%] pb-4" src="https://www.10wallpaper.com/wallpaper/1366x768/1304/golden_gate_bridge_sunset-landscape_photography_wallpaper_1366x768.jpg" alt="">
+                <div class="bg-white flex-1 rounded-md overflow-auto">
+                    <h2 class="bg-gray-500 w-[84%] absolute flex justify-center h-6 items-center font-bold text-lg">金門大橋</h2>
+                    <div class="p-2"><br>金門大橋位於中華民國福建省金門縣,是連結金門本島(大金門)與烈嶼(小金門)的跨海脊背橋,起於金寧鄉慈湖路二段,迄於烈嶼鄉湖埔路,全長5.4公里,其中主橋長4.8公里,最大跨徑280公尺。2022年10月28日完工、10月30日通車,為臺澎金馬(中華民國有效統治地區)最長跨海大橋。<br></div>
+                    <div class="flex rounded-sm bg-gray-400 absolute bottom-6 right-8">
+                        <button class="w-14 flex items-center justify-center text-center font-bold">Read...</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <div class="h-96 bg-white flex items-center justify-center ">
+        <div class="bg-black flex items-start h-80 w-64 rounded-2xl m-4 shadow-lg shadow-black relative">
+            <div class="p-4 h-full w-full flex flex-col justify-between">
+                <img class="card_img rounded-md h-[60%] w-[100%] pb-4" src="https://www.10wallpaper.com/wallpaper/1366x768/1304/golden_gate_bridge_sunset-landscape_photography_wallpaper_1366x768.jpg" alt="">
+                <div class="bg-white flex-1 rounded-md overflow-auto">
+                    <h2 class="bg-gray-500 w-[84%] absolute flex justify-center h-6 items-center font-bold text-lg">金門大橋</h2>
+                    <div class="p-2"><br>金門大橋位於中華民國福建省金門縣,是連結金門本島(大金門)與烈嶼(小金門)的跨海脊背橋,起於金寧鄉慈湖路二段,迄於烈嶼鄉湖埔路,全長5.4公里,其中主橋長4.8公里,最大跨徑280公尺。2022年10月28日完工、10月30日通車,為臺澎金馬(中華民國有效統治地區)最長跨海大橋。<br></div>
+                    <div class="flex rounded-sm bg-gray-400 absolute bottom-6 right-8">
+                        <button class="w-14 flex items-center justify-center text-center font-bold">Read...</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <div class="h-96 bg-white flex items-center justify-center ">
+        <div class="bg-black flex items-start h-80 w-64 rounded-2xl m-4 shadow-lg shadow-black relative">
+            <div class="p-4 h-full w-full flex flex-col justify-between">
+                <img class="card_img rounded-md h-[60%] w-[100%] pb-4" src="https://www.10wallpaper.com/wallpaper/1366x768/1304/golden_gate_bridge_sunset-landscape_photography_wallpaper_1366x768.jpg" alt="">
+                <div class="bg-white flex-1 rounded-md overflow-auto">
+                    <h2 class="bg-gray-500 w-[84%] absolute flex justify-center h-6 items-center font-bold text-lg">金門大橋</h2>
+                    <div class="p-2"><br>金門大橋位於中華民國福建省金門縣,是連結金門本島(大金門)與烈嶼(小金門)的跨海脊背橋,起於金寧鄉慈湖路二段,迄於烈嶼鄉湖埔路,全長5.4公里,其中主橋長4.8公里,最大跨徑280公尺。2022年10月28日完工、10月30日通車,為臺澎金馬(中華民國有效統治地區)最長跨海大橋。<br></div>
+                    <div class="flex rounded-sm bg-gray-400 absolute bottom-6 right-8">
+                        <button class="w-14 flex items-center justify-center text-center font-bold">Read...</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+    <div class="h-96 bg-white flex items-center justify-center ">
+        <div class="bg-black flex items-start h-80 w-64 rounded-2xl m-4 shadow-lg shadow-black relative">
+            <div class="p-4 h-full w-full flex flex-col justify-between">
+                <img class="card_img rounded-md h-[60%] w-[100%] pb-4" src="https://www.10wallpaper.com/wallpaper/1366x768/1304/golden_gate_bridge_sunset-landscape_photography_wallpaper_1366x768.jpg" alt="">
+                <div class="bg-white flex-1 rounded-md overflow-auto">
+                    <h2 class="bg-gray-500 w-[84%] absolute flex justify-center h-6 items-center font-bold text-lg">金門大橋</h2>
+                    <div class="p-2"><br>金門大橋位於中華民國福建省金門縣,是連結金門本島(大金門)與烈嶼(小金門)的跨海脊背橋,起於金寧鄉慈湖路二段,迄於烈嶼鄉湖埔路,全長5.4公里,其中主橋長4.8公里,最大跨徑280公尺。2022年10月28日完工、10月30日通車,為臺澎金馬(中華民國有效統治地區)最長跨海大橋。<br></div>
+                    <div class="flex rounded-sm bg-gray-400 absolute bottom-6 right-8">
+                        <button class="w-14 flex items-center justify-center text-center font-bold">Read...</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>             
+    </div>
+
+    <div class="flex justify-center h-screen">
+        <div></div>
+        <form action="" class="flex flex-col gap-4 w-[400px] bg-sky-200 p-4 mt-10 rounded-lg ">
+            <label for="account" class="">帳號</label>
+            <input id="account" type="text" placeholder="帳號">
+            <label for="pas">密碼</label>
+            <input id="pas" type="password" placeholder="密碼">
+            <button class="bg-sky-900 w-full text-slate-50" type="submit" >登入</button>
+        </form>
+    </div>
+    <div class="flex justify-center">
+        <button class="relative bg-sky-400 mt-10 h-10 rounded-lg w-20 ">購物車
+            <div class="absolute -top-3 -right-5 -translate-x-[50%] rounded-full bg-red-700 w-5 h-5">
+                5
+            </div>
+        </button>
+        
+    </div>
+    <div class="flex bg-white h-screen" >
+        <!-- <div class="flex flex-col bg-black h-screen w-60 items-center gap-2 ">
+            <button class="bg-sky-500 h-10 text-white w-32 text-xl py-1 rounded-md my-2 mx-1 hover:bg-sky-950 active:scale-125">主要</button>
+            <button class="border border-sky-500 h-10 text-sky-500 w-32 text-xl py-1 rounded-md my-2 mx-1">次要</button>
+            <button class="bg-white h-10 text-sky-500 w-32 text-xl py-1 rounded-md my-2 mx-1">一般</button>
+            <button class="bg-gray-500 h-10 text-white w-32 text-xl py-1 rounded-md my-2 mx-1">禁用</button>
+        </div> -->
+        <div class="flex-1 p-2 flex flex-col gap-2">
+            <div class="flex gap-2">
+                <div class="bg-sky-200 h-40 animate__animated animate__backInLeft wow w-1/3"></div>
+                <div class="bg-sky-200 h-40 animate__animated animate__backInLeft wow w-1/3"></div>
+                <div class="bg-sky-200 h-40 animate__animated animate__backInLeft wow w-1/3"></div>
+                <div class="bg-sky-200 h-40 animate__animated animate__backInLeft wow w-1/3"></div>
+                <div class="bg-sky-200 h-40 animate__animated animate__backInLeft wow w-1/3"></div>
+                <div class="bg-sky-200 h-40 animate__animated animate__backInLeft wow w-1/3"></div>
+                <div class="bg-sky-200 h-40 animate__animated animate__backInLeft wow w-2/5"></div>
+                <div class="bg-sky-200 h-40 animate__animated animate__backInLeft wow w-3/5"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          cssMode: true,
+          spaceBetween: 30,
+          centeredSlides: true,
+          autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          mousewheel: true,
+          keyboard: true,
+        });
+    </script>
+    <footer class="bg-black text-white flex justify-between items-center">
+        <div>
+            <div class="loading rounded-full relative rounded-e-full bg-white">
+                <!-- <img src="/S__26910743.gif" alt="" class="h-40 w-40 absolute right-[28%] top-[25%]"> -->
+                <div>𓇣</div>
+                <div>𓇣</div>
+                <div>𓇣</div>
+                <div>𓇣</div>
+                <div>𓇣</div>
+                <div>𓇣</div>
+                <div>𓇣</div>
+                <div>𓇣</div>
+            </div>
+        </div>
+        <div class="w-[33%] flex items-center text-center">
+            <ul>
+                <li class="text-xl font-bold">關於</li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="w-[33%] flex items-center text-center">
+            <ul class="">
+                <li class="text-xl font-bold">聯絡我們</li>
+                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="fill-white h-6 w-6"  viewBox="0 -960 960 960" ><path d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z"/></svg>連絡電話:0800-000-000</li>
+                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg"  class="fill-white h-8 w-8 my-3" height="1em" viewBox="0 0 512 512"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></li>
+                <li></li>
+            </ul>
+        </div>
+    </footer>
+    <div class="bg-white w-full text-center bg-gradient-to-b from-black" >
+        Copyright 2023 
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<style>
+    /* width */
+    ::-webkit-scrollbar {
+            width: 10px;
+            height: 5px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #e4e4e7;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: black;
+            border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: gray;
+        }
+        .gradient_insideout{
+            background:radial-gradient(circle at center,white,black,black);
+            
+        }
+</style>
+</html>

@@ -1,13 +1,164 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>來一課 最懂你的線上課程開課工具 - 藍猴數位探索BlueMonkey</title>
-    <link rel="icon" href="/favicon.ico">
-    <link rel="stylesheet" href="scss/main.scss">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>練習 來一課 最懂你的線上課程開課工具 - 藍猴數位探索BlueMonkey</title>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/css/uikit.min.css" /> <!-- uikit的CDN -->
+  <link rel="stylesheet" href="scss/main.scss"> <!-- 連結CSS檔 -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 </head>
+<!-- Google tag (gtag.js) -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZ9EKSWC8N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RZ9EKSWC8N');
+</script> -->
+<%-include("include/googlega.ejs")%><!-- 導入ejs檔 -->
 <body>
-    <h1>test</h1>
+  <%-include("include/headerV1")%><!-- 導入ejs檔 -->
+  <main class="pt-[70px]">
+    <section id="scroll_2" class="flex w-auto text-center justify-center bg-[#1b96e1] "><!-- Banner的圖片 -->
+      <img class="" src="images/3bm-fb-share.jpg" alt="">
+    </section>
+    <section id="scroll_3" class=" flex w-full bg-[#1b96e1] justify-center pt-[24px] pb-[28px]"> <!-- 查看方案的按鈕 -->
+      <button class="box plan_btn bg-[#ffdd3d] px-24 py-2 font-bold text-xl text-center rounded-full border-[4px] text-black tracking-widest hover:bg-[#fff151] hover:border-[#fff151] animate__delay-4s animate__fast animate__infinite">查看方案<span></span></button>
+      
+    </section>
+    <section id="scroll_4"><!-- 個性化介面 -->
+      <div>
+        <div class="w-auto block justify-center pt-3 lg:flex">
+          <div class="py-5 px-auto text-center lg:py-12 lg:px-14"><p class=" text-[#1b96e1] font-bold text-5xl items-center relative">15,822<b>人</b></p><span>+</span><span class="">學生總數</span></div>
+          <div class="py-5 px-auto text-center lg:py-12 lg:px-14"><p class=" text-[#1b96e1] font-bold text-5xl items-center">17,659<b>萬</b></p><span>+</span><span>創造總收營</span></div>
+          <div class="py-5 px-auto text-center lg:py-12 lg:px-14"><p class=" text-[#1b96e1] font-bold text-5xl items-center">3,988<b>堂</b></p><span>+</span><span>開課數量</span></div>
+      </div>
+      <div class="flex flex-wrap ">
+        <%for(var i=0;i<6;i++){%>
+          <div class="flex flex-col lg:flex-row basis-1/2 md:basis-1/2 lg:basis-1/3 xl:basis-1/4 pb-[40px] px-[15px] ">
+            <div class="w-1/2 mx-auto lg:w-[100px]"><img class="" src="images/spec-img1.png" alt=""></div>
+            <div class="flex-1">
+              <h3 class="text-center text-[22px] font-bold mb-7 lg:text-left">個性化介面</h3>
+              <ul class="text-left text-[12px] px-8 list-[circle] list-inside ">
+                <li class="py-[3px] ">首頁<span >版型切換</span> <span class="yellow_line">(七大區塊皆可換)</span></li>
+                <li class="py-[3px]">自訂品牌Logo</li>
+                <li class="py-[3px]">開放CSS編輯</li>
+                <li class="py-[3px]">增加自訂頁面</li>
+                <li class="py-[3px]">部落格文章系統</li>
+              </ul>
+            </div>
+          </div>
+        <%}%>
+      </div>
+    </section>
+    <section class="bg-[#1b96e1]" id="scroll_5"><!-- 卡片及自動輪播品牌Logo -->
+      <div class="mx-auto max-w-[1500px] text-center pb-5 px-[20px]">
+        <h2 class="py-10 text-[25px] text-white font-bold lg:text-[70px]">各品牌好評見證</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-16">
+          <%for(var i=0;i<4;i++){%>
+            <div class="bg-white rounded-2xl w-[1/4] overflow-hidden">
+              <div class="bg-yellow-300 font-bold text-xl py-2 text-black rounded-t-2xl">美甲美妝業</div>
+              <div class="zoom relative" style="aspect-ratio: 16/9" >
+                <a class="inner w-full h-full block" href="#">
+                  <img class="w-full h-full object-cover" src="images/teach_exam_13.jpg" alt="">
+                </a>
+                <a href="#" class="rounded-br-md bg-red-700 text-white absolute left-0 top-0">募資優惠</a>
+              </div>
+              <a class="txtJL h-5 block py-4 underline text-black" href="#">no15class.com</a>
+              <p class="px-6 pt-4 font-bold text-black">與藍猴平台的溝通非常順暢，使用前清楚講解說明，使用後遇到問題快速協助，後台操作直觀容易理解，也持續擴增新功能，值得推薦!!</p>
+              <div class="flex pl-6">
+                <div class="rounded-full h-16 flex items-center"><img class="h-8 rounded-full" src="images/thead12.png" alt=""></div>
+                <div class="flex items-center text-xs text-black tracking-widest">- 十五號藝術事業</div>
+              </div>
+            </div>
+          <%}%>
+        </div>
+        <div class="relative" uk-slider="autoplay:true;autoplay-interval:500">
+          <div class="flex uk-slider-items">
+            <div class="w-[150px] lg:w-[180px]"><img src="images/teacher-slid/369.png" alt=""></div>
+            <div class="w-[150px] lg:w-[180px]"><img src="images/teacher-slide/matthew.png" alt=""></div>
+            <div class="w-[150px] lg:w-[180px]"><img src="images/teacher-slide/no15.png" alt=""></div>
+            <%for(var i=0;i<5;i++){%>
+              <div class="w-[150px] lg:w-[180px]"><img loading="lazy" src="images/teacher-slide/acdc.png" alt=""></div>
+              <div class="w-[150px] lg:w-[180px]"><img loading="lazy" src="images/teacher-slide/fenny.png" alt=""></div>
+              <div class="w-[150px] lg:w-[180px]"><img loading="lazy" src="images/teacher-slide/mbsr.png" alt=""></div>
+            <%}%>
+          </div>
+          <a class="text-[#fff] uk-position-center-left uk-position-small uk-hidden-hover" href uk-slidenav-previous uk-slider-item="previous"></a>
+          <a class="text-[#fff] uk-position-center-right uk-position-small uk-hidden-hover" href uk-slidenav-next uk-slider-item="next"></a>
+        </div>
+        </div>
+      </div>
+    </section>
+    <section id="scroll_6" class="bg-[#f6f8fd]"><!-- 表單製作及互動性checkbox -->
+      <div class="mx-auto max-w-[1200px] text-center px-[15px] py-[20px] lg:px-[20px] ">
+        <div class="shadow-md bg-white px-10">
+          <h2 class="text-3xl text-[#0693e3] font-bold pt-12 text-left">你的線上教學事業<span class="text-black font-bold">馬上啟動！</span></h2>
+          <p class="text-left">歡迎加入 LINE，即時展開對話，或是填寫下方表單，我們將致電與您討論：）</p>
+        </div>
+        <div class="flex flex-col lg:flex-row">
+          <div class="bg-white py-8 pl-20 px-8 basis-3/4">
+            <form class="flex flex-col gap-3 " action="">
+              <div class="input_group lock"><input class="w-full" type="text" placeholder="*名字"></div>
+              <div class="input_group front_icon"><input class="border w-full border-black bg-[#f6f8fd] pd-3 front_icon mail" type="text" placeholder="*Email"></div>
+              <div class="input_group lock"><input class="border w-full border-black bg-[#f6f8fd] pd-3" type="number" placeholder="*連絡電話"></div>
+              <div class="flex h-7 ">
+                <div>我想了解：</div>
+                <div class="input_chose">
+                  <input id="chose1" name="paln" type="radio">
+                  <label for="chose1">月租方案</label>
+                </div>
+                <div class="input_chose">
+                  <input id="chose2" name="paln" type="radio">
+                  <label for="chose2">企業方案</label>
+                </div>
+                <div class="input_chose">
+                  <input id="chose3" name="paln" type="radio">
+                  <label for="chose3">其他</label>
+                </div>
+              </div>
+              <div class="flex h-7">
+                <div>方便討論時段：</div>
+                <div class="input_chose">
+                  <input id="chose4" name="time" type="radio">
+                  <label for="chose4">上午</label>
+                </div>
+                <div class="input_chose">
+                  <input id="chose5" name="time" type="radio">
+                  <label for="chose5">下午</label>
+                </div>
+              </div>
+              <div class="input_group">
+                <textarea class="border w-full h-full font-bold border-black bg-[#f6f8fd]" name="" id="" cols="20" rows="5" placeholder="您現況遇到的開課問題？
+我們會全力提供協助及建議！"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="bg-white flex items-end pb-8 w-full lg:w-[30%] justify-center pr-8">
+            <button class="rounded-full h-12 text-2xl lg:xl  lg:h-10  bg-[#0693e3] text-white w-[100%]">送出</button>
+          </div>
+        </div>
+      </div>  
+    </section>
+    <div class="toggle w-[100px] h-[150px] fixed right-0 bottom-0 bg-[#1b96e1] z-30" >
+      <!-- <a href="#" uk-totop uk-scroll class="bg-[url('/images')] hidden">Top</a>
+      <a href="#scroll_2" uk-scroll class="hidden"></a> 移動到某個元素 -->
+      <button uk-toggle="target:.toggle" class="h-10 w-10 absolute rounded-full top-[-50px] right-0 bg-gray-400 text-xl font-bold text-white"><img class="fixed right-2 bottom-[167px] h-6 w-6" src="images/close.png" alt=""></button>
+      <img class="bg-transparent" src="https://firebasestorage.googleapis.com/v0/b/school-uiui.appspot.com/o/web%2F1677935316.png?alt=media&token=d9c2656d-da00-4e81-ba21-379793cbcac3" alt="">
+    </div>
+    <p uk-toggle="target:.toggle" class="toggle flex items-center w-[35px] h-[130px] fixed right-0 bottom-10 text-[#1b96e1] bg-white font-bold text-lg cursor-pointer text-center border border-[#1b96e1]" hidden>更多方案</p> <!-- hidden寫在外面是因為使用uikit語法 -->
+
+  </main>
+<!-- UIkit JS -->
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/js/uikit-icons.min.js"></script>
 </body>
+
 </html>
